@@ -63,7 +63,6 @@ def sign_up():
         #dataset = cursor.fetchall()
         #print(dataset)
         conn.close()
-        #return ("First Name: " + FirstName + " Last Name: " + LastName + " Email: " + Email)
     return render_template("sign_up.html")
 
 
