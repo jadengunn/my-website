@@ -2,6 +2,8 @@ from flask import Blueprint, render_template, request, flash
 import pyodbc as odbc
 from bs4 import BeautifulSoup
 
+
+
 auth = Blueprint('auth', __name__)
 
 server = 'cpsc.database.windows.net'
