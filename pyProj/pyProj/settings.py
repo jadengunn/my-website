@@ -86,6 +86,7 @@ DATABASES = {
             'driver': 'ODBC Driver 18 for SQL Server',
             
     }
+    }
 }
 
 
