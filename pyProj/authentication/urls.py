@@ -1,12 +1,14 @@
-from django.urls import path
+from django.contrib import admin
+from django.urls import path, include
 from .views import sign_up, post_list, post_detail, post_new, post_edit
+from authentication.views import signup_view, login_view
 
 app_name = 'authentication'
 
 urlpatterns = [
-    path('sign-up/', sign_up, name='sign_up'),
-    path('', post_list, name='post_list'),
-    path('post/<int:pk>/', post_detail, name='post_detail'),
-    path('post/new/', post_new, name='post_new'),
-    path('post/<int:pk>/edit/', post_edit, name='post_edit'),
+    path('admin/', admin.site.urls),
+    path('', include('main.urls')),
+    path('accounts/signup/', signup_view, name='signup'),
+    path('accounts/login/', login_view, name='login'),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
