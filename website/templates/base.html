@@ -1,39 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <link rel="stylesheet" type="text/css" href="../static/style.css">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CPSC Base Page</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-<body style="background-image: url('https://th.bing.com/th/id/OIP.Gl1BSZc0ECCAgfVYFdyqFwHaEK?w=317&h=180&c=7&r=0&o=5&pid=1.7'); background-size: cover;">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">CPSC</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="{{ url_for('login') }}">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('signup') }}">Sign-Up</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'recall' %}">Recall Prioritization</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+<body>
+{% include 'partials/header.html' %}
 
-  <h1>CPSC Recalls</h1>
+{% block content %}
+{% endblock %}
 
-  <div class="container" style="position: relative;">
-    <img src="https://th.bing.com/th?id=OIP.vCGaLEZqM_4rXYvRF-4WGAHaHh&w=247&h=252&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="CPSC Logo" style="position: absolute; top: 10px; right: 10px; height: 100px; width: 100px; border: 2px solid white; border-radius: 50%;"/>
-</div>
+{% include 'partials/footer.html' %}
 </body>
 </html>
