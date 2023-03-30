@@ -41,7 +41,7 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
 
-    def signup(request):
+def signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
@@ -55,7 +55,7 @@ def post_edit(request, pk):
         form = SignUpForm()
     return render(request, 'authentication/signup.html', {'form': form})
 
-    def login_view(request):
+def login_view(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -68,7 +68,7 @@ def post_edit(request, pk):
     return render(request, 'authentication/login.html')
 
 
-    def register(request):
+def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
